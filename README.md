@@ -1,107 +1,124 @@
-# 🤖 AI Code Reviewer (AST + LLM)
+# 💳 Fraud Detection in Financial Transactions
 
-An AI-powered code review application built using Python, Streamlit, and Large Language Models (LLMs). The system analyzes Python code, detects syntax issues using Python AST, explains errors in simple language, and generates corrected code suggestions interactively.
+A machine learning project focused on detecting fraudulent financial transactions using classification models, exploratory data analysis (EDA), and anomaly detection techniques. The system analyzes transaction patterns, handles class imbalance, and evaluates model performance using precision-focused metrics.
 
 ---
 
 ## 🚀 Features
 
-* 🔍 Syntax validation using Python AST
-* 🤖 AI-powered code review using LLMs
-* 🧠 Explanation of syntax and logical issues
-* 🛠️ Suggested fixes and corrected code
-* 💬 Interactive Streamlit interface
-* ⚡ Real-time debugging workflow
-* 📌 Structured feedback generation
-* 🌙 Developer-focused dark UI
+* 📊 Exploratory Data Analysis (EDA)
+* 🧹 Data cleaning and preprocessing
+* ⚖️ Handling imbalanced datasets
+* 🤖 Fraud detection using Machine Learning
+* 📈 Precision, Recall, F1-score evaluation
+* 🔍 Fraud pattern and anomaly analysis
+* 📉 Confusion matrix visualization
+* 📊 Data visualization and model analysis
 
 ---
 
 ## 🛠️ Tech Stack
 
 * Python
-* Streamlit
-* AST (Abstract Syntax Tree)
-* LLM Integration (Groq / Local Model via LM Studio)
-* Requests Library
+* Pandas
+* NumPy
+* Scikit-learn
+* Matplotlib
+* Seaborn
+* Jupyter Notebook
 
 ---
 
 ## 🧠 Why This Project?
 
-Debugging code can be difficult for beginners and time-consuming during development. This project combines deterministic syntax validation using Python AST with AI-generated explanations to create an interactive learning and debugging assistant.
+Fraudulent financial transactions can cause major financial losses and are often difficult to detect due to highly imbalanced datasets. This project explores how machine learning models can identify suspicious transaction behavior while minimizing false positives and improving fraud detection reliability.
 
-The goal is to make debugging:
+The project focuses on:
 
-* easier to understand
-* more interactive
-* beginner-friendly
-* AI-assisted
+* identifying fraud patterns
+* handling imbalanced data
+* improving classification performance
+* analyzing model behavior and errors
 
 ---
 
-## ⚙️ System Workflow
+## ⚙️ Workflow
 
-1. User submits Python code through the Streamlit UI
-2. Python AST validates syntax and detects parsing errors
-3. Structured prompts are generated for the LLM
-4. AI analyzes the code and generates explanations
-5. The system returns:
-
-   * syntax issues
-   * explanations
-   * fixes
-   * corrected code
-6. Results are displayed interactively in the UI
+1. Load and inspect transaction dataset
+2. Perform exploratory data analysis (EDA)
+3. Clean and preprocess data
+4. Handle class imbalance
+5. Train machine learning models
+6. Evaluate model performance using fraud-focused metrics
+7. Analyze predictions and model errors
 
 ---
 
 ## 📂 Project Structure
 
-```bash
-ai-code-reviewer/
+```bash id="n8k3tx"
+fraud-detection/
 │
-├── app.py              # Streamlit application
-├── requirements.txt    # Project dependencies
-└── README.md           # Documentation
+├── Fraud_Detection_Financial_Transactions.ipynb
+├── README.md
+└── requirements.txt
 ```
 
 ---
 
-## 📸 Screenshots
+## 📊 Exploratory Data Analysis
 
-### 🔍 Syntax Error Detection
+The project includes:
 
-The application detects Python syntax issues using AST parsing before AI analysis.
+* transaction distribution analysis
+* fraud vs non-fraud comparison
+* anomaly detection
+* feature relationship analysis
+* class imbalance visualization
 
-![Syntax Check](assets/syntax-check.png)
-
----
-
-### 🤖 AI-Powered Review
-
-The AI model explains issues, suggests fixes, and generates corrected code interactively.
-
-![AI Review](assets/ai-review.png)
+EDA was used to better understand transaction behavior and identify patterns associated with fraudulent activity.
 
 ---
 
-## 💻 Example Workflow
+## 🤖 Machine Learning Models
 
-### Input Code
+The following models were implemented and evaluated:
 
-```python
-def analyze_code(code)
-    if "error" in code
-        print("Found error")
+* Logistic Regression
+* Random Forest Classifier
+
+---
+
+## 📈 Evaluation Metrics
+
+Since fraud detection datasets are highly imbalanced, the project focuses on:
+
+* Precision
+* Recall
+* F1-score
+* Confusion Matrix
+
+These metrics help evaluate the model’s ability to correctly identify fraudulent transactions while reducing false positives.
+
+---
+
+## 📸 Visualizations
+
+The notebook includes visualizations for:
+
+* fraud transaction distribution
+* feature analysis
+* correlation patterns
+* confusion matrix analysis
+* model performance comparison
+
+(Add screenshots here if available)
+
+```md id="4vxkp2"
+![Fraud Analysis](assets/fraud-analysis.png)
+
+![Confusion Matrix](assets/confusion-matrix.png)
 ```
-
-### AI Feedback
-
-* Detects missing colon (`:`)
-* Explains indentation issues
-* Suggests corrected implementation
-* Generates improved Python code
 
 ---
 
@@ -109,74 +126,60 @@ def analyze_code(code)
 
 ### 1. Clone Repository
 
-```bash
-git clone https://github.com/Sara0210-stack/ai-code-reviewer.git
-cd ai-code-reviewer
+```bash id="a0m8yw"
+git clone https://github.com/Sara0210-stack/fraud-detection.git
+cd fraud-detection
 ```
 
 ### 2. Create Virtual Environment
 
-```bash
+```bash id="v0d8tz"
 python -m venv .venv
 .venv\Scripts\activate
 ```
 
 ### 3. Install Dependencies
 
-```bash
+```bash id="6cyqg3"
 pip install -r requirements.txt
 ```
 
-### 4. Run Application
+### 4. Launch Jupyter Notebook
 
-```bash
-streamlit run app.py
+```bash id="8gn13w"
+jupyter notebook
 ```
-
----
-
-## 🔐 API Setup
-
-If using an external LLM API:
-
-Create a `.env` file:
-
-```env
-API_KEY=your_api_key_here
-```
-
-Or directly configure the API key in the application.
 
 ---
 
 ## 🧠 Technical Challenges
 
-* Handling inconsistent LLM responses
-* Improving prompt reliability for debugging tasks
-* Detecting syntax vs logical errors separately
-* Managing structured AI feedback generation
-* Balancing deterministic parsing with generative AI outputs
+* Handling highly imbalanced fraud datasets
+* Reducing false positives during prediction
+* Selecting meaningful evaluation metrics
+* Understanding model misclassifications
+* Identifying hidden fraud patterns through EDA
 
 ---
 
 ## 🔮 Future Improvements
 
-* Support for multiple programming languages
-* Static analysis integration for deeper code review
-* AI-powered complexity and performance suggestions
-* VS Code extension integration
-* Retrieval-based debugging examples using code embeddings
-* Local offline inference optimization
+* XGBoost and LightGBM implementation
+* Real-time fraud detection pipeline
+* Feature importance analysis
+* Deep learning-based anomaly detection
+* Streamlit dashboard for live predictions
+* Hyperparameter optimization
 
 ---
 
 ## 🎯 Use Cases
 
-* Python beginners learning debugging
-* AI-assisted programming workflows
-* Understanding syntax and logical errors
-* Educational coding support
-* Rapid debugging assistance
+* Financial fraud monitoring
+* Transaction risk analysis
+* Banking security systems
+* Fraud analytics research
+* ML-based anomaly detection workflows
 
 ---
 
@@ -188,4 +191,4 @@ Sara Shaikh
 
 ## ⭐ Acknowledgment
 
-Built as part of AI/ML learning and portfolio development focused on intelligent systems and AI-assisted developer tools.
+Built as part of AI/ML learning and portfolio development focused on machine learning, anomaly detection, and real-world financial analytics.
